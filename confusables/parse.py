@@ -22,8 +22,8 @@ def _get_confusable_chars(character, unicode_confusable_map, depth):
 def parse_new_mapping_file():
     unicode_confusable_map = {}
 
-    with open(os.path.join(os.path.dirname(__file__), CONFUSABLES_PATH), "r") as unicode_mappings:
-        with open(os.path.join(os.path.dirname(__file__), CUSTOM_CONFUSABLE_PATH), "r") as custom_mappings:
+    with open(os.path.join(os.path.dirname(__file__), CONFUSABLES_PATH), "r", encoding = 'utf-8') as unicode_mappings:
+        with open(os.path.join(os.path.dirname(__file__), CUSTOM_CONFUSABLE_PATH), "r", encoding = 'utf-8') as custom_mappings:
             mappings = unicode_mappings.readlines()
             mappings.extend(custom_mappings)
 
